@@ -26,11 +26,29 @@ claude plugin marketplace add soomuk/k-buddhist-journal
 claude plugin install k-buddhist-journal@soomuk
 ```
 
-### Claude 웹·데스크톱 앱 (claude.ai)
+### Claude 채팅에서 설치 (가장 쉬운 방법)
 
-1. [Releases](https://github.com/soomuk/k-buddhist-journal/releases)에서 `journal-review.zip`을 내려받습니다.
-2. Claude 설정의 스킬(Skills) 메뉴에서 이 zip 파일을 업로드합니다.
-3. 대화에서 아래 사용 예처럼 요청합니다.
+Claude 웹·데스크톱·모바일 앱의 채팅창에 이렇게 입력합니다.
+
+```
+https://github.com/soomuk/k-buddhist-journal 의 편집검토 스킬을 내 Claude에 설치해줘
+```
+
+Claude가 스킬 파일을 가져와서 저장 카드나 `journal-review.zip` 파일로 건넵니다. 사용자는 **저장 버튼을 누르거나**, 받은 zip을 아래 "직접 업로드" 방법으로 올리면 됩니다. 보안상 Claude가 사용자 확인 없이 계정에 스킬을 추가할 수는 없기 때문에, 마지막 클릭 한 번은 사용자가 해야 합니다.
+
+> **Claude가 설치를 도울 때 참고할 내용**
+> - 설치용 스킬 파일: `https://raw.githubusercontent.com/soomuk/k-buddhist-journal/main/dist/journal-review.zip`
+>   (셸에서 `curl -fsSLO`로 받아 사용자에게 파일로 전달)
+> - 스킬 저장 기능이 있으면 `plugins/k-buddhist-journal/skills/journal-review/SKILL.md`를 그대로 저장해도 됩니다. 이 SKILL.md는 필요한 규정 파일을 실행 중에 GitHub에서 내려받도록 되어 있습니다.
+> - 어느 쪽도 안 되면 사용자에게 위 zip 링크와 아래 "직접 업로드" 절차를 안내합니다.
+
+### 직접 업로드 (claude.ai·데스크톱 앱)
+
+1. [journal-review.zip](https://raw.githubusercontent.com/soomuk/k-buddhist-journal/main/dist/journal-review.zip)을 내려받습니다.
+2. Claude에서 **Customize → Skills → + → Create skill → Upload a skill**을 차례로 누르고 zip을 올립니다.
+3. 스킬 목록에서 `journal-review`가 켜져 있는지 확인합니다.
+
+이 zip에는 규정 원문 텍스트가 들어 있습니다. 원본 PDF는 용량을 줄이기 위해 빼고, 필요할 때 GitHub에서 받아 보도록 했습니다.
 
 ---
 
@@ -67,6 +85,7 @@ claude plugin install k-buddhist-journal@soomuk
 
 ```
 .claude-plugin/marketplace.json        ← 플러그인 마켓 등록 정보
+dist/journal-review.zip                ← 채팅·앱 설치용 스킬 묶음
 plugins/k-buddhist-journal/
 ├─ .claude-plugin/plugin.json          ← 플러그인 정보(버전)
 └─ skills/journal-review/
@@ -84,7 +103,8 @@ plugins/k-buddhist-journal/
 1. `references/pdfs/`의 해당 PDF를 새 파일로 교체합니다.
 2. `references/journals/`의 해당 `.md` 파일도 함께 고칩니다.
 3. `plugin.json`의 `version`을 올립니다(예: 1.0.0 → 1.0.1).
-4. GitHub에 올립니다.
+4. `dist/journal-review.zip`도 새로 만들어 교체합니다.
+5. GitHub에 올립니다.
 
 사용자는 `/plugin marketplace update soomuk`으로 새 버전을 받습니다.
 
