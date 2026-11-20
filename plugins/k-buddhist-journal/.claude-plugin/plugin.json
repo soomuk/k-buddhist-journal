@@ -1,1 +1,12 @@
-
+{
+  "name": "k-buddhist-journal",
+  "version": "1.0.0",
+  "description": "한국 불교학 학술지 29종의 편집규정에 맞춰 투고논문의 형식·참고문헌·오탈자·사실관계 오류를 점검하고 편집점검보고서(.docx)를 만듭니다.",
+  "author": {
+    "name": "수묵학술문화연구소 (Soomuk)"
+  },
+  "homepage": "https://github.com/hmseodam/k-buddhist-journal",
+  "repository": "https://github.com/hmseodam/k-buddhist-journal",
+  "license": "MIT",
+  "keywords": ["buddhist-studies", "korean", "journal", "editing", "style-guide", "불교학", "학술지", "편집"]
+}
