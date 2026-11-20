@@ -13,7 +13,7 @@
 Claude Code를 실행한 뒤 아래 두 줄을 차례로 입력합니다.
 
 ```
-/plugin marketplace add hmseodam/k-buddhist-journal
+/plugin marketplace add soomuk/k-buddhist-journal
 /plugin install k-buddhist-journal@soomuk
 ```
 
@@ -22,13 +22,13 @@ Claude Code를 실행한 뒤 아래 두 줄을 차례로 입력합니다.
 터미널에서 바로 설치하려면 다음처럼 입력합니다.
 
 ```bash
-claude plugin marketplace add hmseodam/k-buddhist-journal
+claude plugin marketplace add soomuk/k-buddhist-journal
 claude plugin install k-buddhist-journal@soomuk
 ```
 
 ### Claude 웹·데스크톱 앱 (claude.ai)
 
-1. [Releases](https://github.com/hmseodam/k-buddhist-journal/releases)에서 `journal-review.zip`을 내려받습니다.
+1. [Releases](https://github.com/soomuk/k-buddhist-journal/releases)에서 `journal-review.zip`을 내려받습니다.
 2. Claude 설정의 스킬(Skills) 메뉴에서 이 zip 파일을 업로드합니다.
 3. 대화에서 아래 사용 예처럼 요청합니다.
 
