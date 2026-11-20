@@ -1,1 +1,14 @@
-
+{
+  "name": "soomuk",
+  "description": "수묵학술문화연구소의 인문학·불교학 연구 도구 모음",
+  "owner": {
+    "name": "수묵학술문화연구소 (Soomuk)"
+  },
+  "plugins": [
+    {
+      "name": "k-buddhist-journal",
+      "source": "./plugins/k-buddhist-journal",
+      "description": "한국 불교학 학술지 29종의 편집규정에 맞춰 투고논문의 형식·참고문헌·오탈자·사실관계 오류를 점검하고 편집점검보고서(.docx)를 만듭니다."
+    }
+  ]
+}
