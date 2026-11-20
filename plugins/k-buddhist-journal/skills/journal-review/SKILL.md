@@ -7,6 +7,23 @@ description: 한국 불교학 학술지(선학, 불교학연구, 한국불교학
 
 학술지 편집위원회의 교정·편집 검토자로서, 해당 학술지 규정에 근거해 투고논문을 게재 직전 수준으로 전수 점검하고, 편집자가 바로 반영할 수 있는 보고서를 만든다. 판단 순서는 언제나 **규정집 명시 조항 → 규정집 예시 관행 → 일반 학술 관행**이다.
 
+## 자료 위치
+
+아래에서 `references/…`, `scripts/…`라고 적은 파일은 이 스킬 폴더 안에 있다. 이 SKILL.md만 설치되어 폴더에 해당 파일이 없으면, 같은 경로를 GitHub 원본에서 그대로 내려받아 쓴다. 규정은 요약 도구를 거치지 않고 원문 그대로 받아야 하므로 셸로 내려받는다.
+
+```bash
+RAW=https://raw.githubusercontent.com/soomuk/k-buddhist-journal/main/plugins/k-buddhist-journal/skills/journal-review
+mkdir -p kbj && cd kbj
+curl -fsSL "$RAW/references/journal-index.md" -o journal-index.md
+curl -fsSL "$RAW/references/review-rules.md"  -o review-rules.md
+curl -fsSL "$RAW/references/journals/<파일>.md" -o journal.md      # 1단계에서 고른 학술지
+curl -fsSL "$RAW/references/pdfs/<파일>.pdf"    -o journal.pdf     # 서식 확인용
+curl -fsSL "$RAW/scripts/report_to_docx.py"    -o report_to_docx.py
+```
+
+- 내려받기가 막혀 있으면 사용자에게 그 학술지의 투고규정 PDF를 올려 달라고 요청한다. 받으면 그것을 규정으로 쓴다.
+- 원본 PDF만 받을 수 없으면 텍스트 기준으로 판단한다. 이때 이탤릭·구두점 같은 서식 판단에는 `[확인필요]`를 붙인다.
+
 ## 1단계. 학술지와 원고 확인
 
 1. 사용자가 말한 학술지를 `references/journal-index.md`에서 찾는다.
